@@ -1,0 +1,15 @@
+greeting: Hello ${name}!\nCan you send me a screenshot of your ingress profile with the 12 mission day missions clearly visible?
+textBeforePhoto: Please start with /start 😉
+onlyPhotos: Thanks, but can you please send your screenshot as a photo in order to help me to continue your checkout?
+ingressUsernameAgain: Then please write me your correct Ingress agent name 😇
+ingressUsernameIsCorrect: Is ${agent} correct? Please check for spelling errors or correct capitals.\nIs your agent name the same as in your Ingress Scanner?
+ingressUsernameNo: No 😳
+ingressUsernameQuestion: Can you please provide me your Ingress agent name?
+ingressUsernameQuestionTGUsername: Is your Telegram username @${agent} your Ingress agent name?
+ingressUsernameYesBlue: 💙 Yes!
+ingressUsernameYesGreen: Yes! 💚
+pictureAgain: Then please send me a better screenshot ☺️
+pictureNo: No 😔
+pictureVisible: Can you clearly see the 12 missions from the missionday in your screenshot?
+pictureYes: Yes!
+checkoutComplete: Looks like you have checked in. I hope you enjoyed the missionday!

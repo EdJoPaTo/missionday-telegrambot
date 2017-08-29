@@ -1,0 +1,15 @@
+greeting: Hallo ${name}!\nBitte schick mir einen Screenshot von deinem Ingress Profil damit ich deinen Checkout fortsetzen kann. Achte darauf, dass man die 12 Missionen gut erkennen kann.
+textBeforePhoto: Beginne bitte mit /start 😉
+onlyPhotos: Danke! Aber kannst du mir bitte deinen Screenshot als Bild senden, damit ich deinen Checkout fortsetzen kann?
+ingressUsernameAgain: Dann sende mir bitte deinen korrekten Agentennamen 😇
+ingressUsernameIsCorrect: Ist ${agent} richtig? Auch Groß- und Kleinschreibung müssen stimmen!\nStimmt er dem in deinem Ingress Scanner überein?
+ingressUsernameNo: Nein 😳
+ingressUsernameQuestion: Magst du mir nun noch deinen Ingress Agentennamen nennen?
+ingressUsernameQuestionTGUsername: Ist dein Telegram Username @${agent} auch dein Ingress Agentenname?
+ingressUsernameYesBlue: 💙 Ja!
+ingressUsernameYesGreen: Ja! 💚
+pictureAgain: Dann schicke mir bitte einen besseren Screenshot ☺️
+pictureNo: Nein 😔
+pictureVisible: Kann man die 12 Missionen gut im Screenshot erkennen?
+pictureYes: Ja!
+checkoutComplete: Sieht so aus, als hättest du ausgecheckt! Ich hoffe, du hast den Missionday genossen!

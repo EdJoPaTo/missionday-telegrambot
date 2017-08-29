@@ -1,0 +1,2 @@
+start - start the checkout
+about - infos about the creator of the bot
