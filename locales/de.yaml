@@ -5,7 +5,7 @@ ingressUsernameAgain: Dann sende mir bitte deinen korrekten Agentennamen 😇
 ingressUsernameIsCorrect: Ist `${agent}` richtig? Auch Groß- und Kleinschreibung müssen stimmen!\nStimmt er dem in deinem Ingress Scanner überein?
 ingressUsernameNo: Nein 😳
 ingressUsernameQuestion: Magst du mir nun noch deinen Ingress Agentennamen nennen?
-ingressUsernameQuestionTGUsername: Ist dein Telegram Username @${agent} auch dein Ingress Agentenname?
+ingressUsernameQuestionTGUsername: Ist dein Telegram Username @${agent} auch dein Ingress Agentenname?\nIst er exakt gleich geschrieben? Achte auch auf die Groß- und Kleinschreibung!
 ingressUsernameYesBlue: 💙 Ja!
 ingressUsernameYesGreen: Ja! 💚
 pictureAgain: Dann schicke mir bitte einen besseren Screenshot ☺️
