@@ -2,7 +2,7 @@ greeting: Hallo ${name}!\nBitte schick mir einen Screenshot von deinem Ingress P
 textBeforePhoto: Beginne bitte mit /start 😉
 onlyPhotos: Danke! Aber kannst du mir bitte deinen Screenshot als Bild senden, damit ich deinen Checkout fortsetzen kann?
 ingressUsernameAgain: Dann sende mir bitte deinen korrekten Agentennamen 😇
-ingressUsernameIsCorrect: Ist ${agent} richtig? Auch Groß- und Kleinschreibung müssen stimmen!\nStimmt er dem in deinem Ingress Scanner überein?
+ingressUsernameIsCorrect: Ist `${agent}` richtig? Auch Groß- und Kleinschreibung müssen stimmen!\nStimmt er dem in deinem Ingress Scanner überein?
 ingressUsernameNo: Nein 😳
 ingressUsernameQuestion: Magst du mir nun noch deinen Ingress Agentennamen nennen?
 ingressUsernameQuestionTGUsername: Ist dein Telegram Username @${agent} auch dein Ingress Agentenname?

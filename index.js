@@ -114,7 +114,7 @@ function generateUsernameCheckKeyboard(ctx) {
 bot.hears(match('pictureYes'), ctx => {
   if (ctx.from.username) {
     ctx.session.agentname = ctx.from.username
-    return ctx.reply(ctx.i18n.t('ingressUsernameQuestionTGUsername', { agent: ctx.session.agentname }), Extra.markup(generateUsernameCheckKeyboard(ctx)))
+    return ctx.replyWithMarkdown(ctx.i18n.t('ingressUsernameQuestionTGUsername', { agent: ctx.session.agentname }), Extra.markup(generateUsernameCheckKeyboard(ctx)))
   }
   return ctx.reply(ctx.i18n.t('ingressUsernameQuestion'), Markup.removeKeyboard().extra())
 })
@@ -132,7 +132,7 @@ bot.hears([match('ingressUsernameYesBlue'), match('ingressUsernameYesGreen')], T
 
 bot.on('text', Telegraf.optional(ctx => ctx.session.photoUrl, ctx => {
   ctx.session.agentname = ctx.message.text
-  return ctx.reply(ctx.i18n.t('ingressUsernameIsCorrect', {
+  return ctx.replyWithMarkdown(ctx.i18n.t('ingressUsernameIsCorrect', {
     agent: ctx.session.agentname
   }), Extra.markup(generateUsernameCheckKeyboard(ctx)))
 }))

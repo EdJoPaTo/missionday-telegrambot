@@ -2,7 +2,7 @@ greeting: Hello ${name}!\nCan you send me a screenshot of your ingress profile w
 textBeforePhoto: Please start with /start 😉
 onlyPhotos: Thanks, but can you please send your screenshot as a photo in order to help me to continue your checkout?
 ingressUsernameAgain: Then please write me your correct Ingress agent name 😇
-ingressUsernameIsCorrect: Is ${agent} correct? Please check for spelling errors or correct capitals.\nIs your agent name the same as in your Ingress Scanner?
+ingressUsernameIsCorrect: Is `${agent}` correct? Please check for spelling errors or correct capitals.\nIs your agent name the same as in your Ingress Scanner?
 ingressUsernameNo: No 😳
 ingressUsernameQuestion: Can you please provide me your Ingress agent name?
 ingressUsernameQuestionTGUsername: Is your Telegram username @${agent} your Ingress agent name?
