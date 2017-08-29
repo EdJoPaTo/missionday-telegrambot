@@ -18,7 +18,8 @@ bot.use(Telegraf.memorySession())
 const i18n = new TelegrafI18n({
   allowMissing: true,
   defaultLanguage: 'en',
-  directory: 'locales'
+  directory: 'locales',
+  useSession: true
 })
 bot.use(i18n.middleware())
 
@@ -54,8 +55,18 @@ bot.use(async (ctx, next) => {
   return next()
 })
 
-// load language from language code
-bot.use((ctx, next) => {
+bot.hears(/.*#Ingress.*/, ctx => {}) // Ignore the 'My #Ingress agent profile.', hopefully in every language
+
+bot.on('document', ctx => {
+  return ctx.reply(ctx.i18n.t('onlyPhotos'), Markup.removeKeyboard().extra())
+})
+
+bot.command('about', ctx => ctx.replyWithMarkdown('This bot was created by @EdJoPaTo.\n\nIf you want to host your own for your Missionday or have some improvements in mind, take a look at the [Github Repository](https://github.com/EdJoPaTo/missionday-telegrambot) or write a message via Telegram (@EdJoPaTo).', Markup.removeKeyboard().extra()))
+
+bot.command('start', ctx => {
+  ctx.session = {} // ensure session is clean on a restart
+
+  // load language from language code
   if (ctx.from.language_code) {
     const code = ctx.from.language_code
     let lang
@@ -69,19 +80,7 @@ bot.use((ctx, next) => {
     }
     ctx.i18n.locale(lang)
   }
-  return next()
-})
 
-bot.hears(/.*#Ingress.*/, ctx => {}) // Ignore the 'My #Ingress agent profile.', hopefully in every language
-
-bot.on('document', ctx => {
-  return ctx.reply(ctx.i18n.t('onlyPhotos'), Markup.removeKeyboard().extra())
-})
-
-bot.command('about', ctx => ctx.replyWithMarkdown('This bot was created by @EdJoPaTo.\n\nIf you want to host your own for your Missionday or have some improvements in mind, take a look at the [Github Repository](https://github.com/EdJoPaTo/missionday-telegrambot) or write a message via Telegram (@EdJoPaTo).', Markup.removeKeyboard().extra()))
-
-bot.command('start', ctx => {
-  ctx.session = {} // ensure session is clean on a restart
   return ctx.reply(ctx.i18n.t('greeting', {
     name: ctx.from.first_name
   }), Markup.removeKeyboard().extra())
