@@ -116,11 +116,11 @@ bot.hears(match('pictureYes'), ctx => {
     ctx.session.agentname = ctx.from.username
     return ctx.replyWithMarkdown(ctx.i18n.t('ingressUsernameQuestionTGUsername', { agent: ctx.session.agentname }), Extra.markup(generateUsernameCheckKeyboard(ctx)))
   }
-  return ctx.reply(ctx.i18n.t('ingressUsernameQuestion'), Markup.removeKeyboard().extra())
+  return ctx.reply(ctx.i18n.t('ingressUsernameQuestion'), Markup.forceReply().extra())
 })
 
 bot.hears(match('ingressUsernameNo'), Telegraf.optional(ctx => ctx.session.photoUrl, ctx => {
-  return ctx.reply(ctx.i18n.t('ingressUsernameAgain'), Markup.removeKeyboard().extra())
+  return ctx.reply(ctx.i18n.t('ingressUsernameAgain'), Markup.forceReply().extra())
 }))
 
 bot.hears([match('ingressUsernameYesBlue'), match('ingressUsernameYesGreen')], Telegraf.optional(ctx => ctx.session.photoUrl && ctx.session.agentname, async ctx => {
@@ -133,7 +133,13 @@ bot.hears([match('ingressUsernameYesBlue'), match('ingressUsernameYesGreen')], T
   return ctx.reply(ctx.i18n.t('checkoutComplete'), Markup.removeKeyboard().extra())
 }))
 
-bot.on('text', Telegraf.optional(ctx => ctx.session.photoUrl, ctx => {
+bot.on('text', Telegraf.optional(ctx => {
+  if (!ctx.session.photoUrl) return false
+  const text = ctx.message.reply_to_message.text
+  if (text === ctx.i18n.t('ingressUsernameAgain')) return true
+  if (text === ctx.i18n.t('ingressUsernameQuestion')) return true
+  return false
+}, ctx => {
   ctx.session.agentname = ctx.message.text
   return ctx.replyWithMarkdown(ctx.i18n.t('ingressUsernameIsCorrect', {
     agent: ctx.session.agentname
