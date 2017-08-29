@@ -63,22 +63,23 @@ bot.on('document', ctx => {
 
 bot.command('about', ctx => ctx.replyWithMarkdown('This bot was created by @EdJoPaTo.\n\nIf you want to host your own for your Missionday or have some improvements in mind, take a look at the [Github Repository](https://github.com/EdJoPaTo/missionday-telegrambot) or write a message via Telegram (@EdJoPaTo).', Markup.removeKeyboard().extra()))
 
+const languageList = {
+  'en-DE': 'de',
+  'en-US': 'en'
+}
+
 bot.command('start', ctx => {
   ctx.session = {} // ensure session is clean on a restart
 
   // load language from language code
   if (ctx.from.language_code) {
     const code = ctx.from.language_code
-    let lang
-    if (code === 'en-DE') {
-      lang = 'de'
-    } else if (code === 'en-US') {
-      lang = 'en'
+    const lang = languageList[code]
+    if (lang) {
+      ctx.i18n.locale(lang)
     } else {
       console.warn('unhandled language code', code)
-      lang = 'en'
     }
-    ctx.i18n.locale(lang)
   }
 
   return ctx.reply(ctx.i18n.t('greeting', {
