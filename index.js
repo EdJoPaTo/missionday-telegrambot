@@ -125,8 +125,11 @@ bot.hears(match('ingressUsernameNo'), Telegraf.optional(ctx => ctx.session.photo
 
 bot.hears([match('ingressUsernameYesBlue'), match('ingressUsernameYesGreen')], Telegraf.optional(ctx => ctx.session.photoUrl && ctx.session.agentname, async ctx => {
   const url = ctx.session.photoUrl
+  const id = ctx.from.id
+  const color = ctx.message.text === ctx.i18n.t('ingressUsernameYesBlue') ? 'blue' : 'green'
   const name = ctx.session.agentname
-  await getFile(url, `checkouts/${name}.jpg`)
+
+  await getFile(url, `checkouts/${id}-${color}-${name}.jpg`)
   return ctx.reply(ctx.i18n.t('checkoutComplete'), Markup.removeKeyboard().extra())
 }))
 
