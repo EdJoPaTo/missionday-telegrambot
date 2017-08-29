@@ -64,6 +64,7 @@ bot.on('document', ctx => {
 bot.command('about', ctx => ctx.replyWithMarkdown('This bot was created by @EdJoPaTo.\n\nIf you want to host your own for your Missionday or have some improvements in mind, take a look at the [Github Repository](https://github.com/EdJoPaTo/missionday-telegrambot) or write a message via Telegram (@EdJoPaTo).', Markup.removeKeyboard().extra()))
 
 const languageList = {
+  'de-DE': 'de',
   'en-DE': 'de',
   'en-US': 'en'
 }
