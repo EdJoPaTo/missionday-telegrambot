@@ -78,7 +78,7 @@ bot.on('document', ctx => {
   return ctx.reply(ctx.i18n.t('onlyPhotos'), Markup.removeKeyboard().extra())
 })
 
-bot.command('about', ctx => ctx.replyWithMarkdown('This bot was created by @EdJoPaTo.\n\nIf you want to host your own for your missionday or have some improvements in mind, take a look at the [Github Repository](https://github.com/EdJoPaTo/missionday-telegrambot) or write a message via Telegram (@EdJoPaTo).', Markup.removeKeyboard().extra()))
+bot.command('about', ctx => ctx.replyWithMarkdown('This bot was created by @EdJoPaTo.\n\nIf you want to host your own for your Missionday or have some improvements in mind, take a look at the [Github Repository](https://github.com/EdJoPaTo/missionday-telegrambot) or write a message via Telegram (@EdJoPaTo).', Markup.removeKeyboard().extra()))
 
 bot.command('start', ctx => {
   return ctx.reply(ctx.i18n.t('greeting', {
