@@ -4,12 +4,7 @@ const Telegraf = require('telegraf')
 const TelegrafI18n = require('telegraf-i18n')
 
 const { Extra, Markup } = Telegraf
-
-// see https://github.com/telegraf/telegraf-i18n/pull/7
-// const { match } = TelegrafI18n
-function match(ressourceKey, templateData) {
-  return (text, ctx) => text && ctx && ctx.i18n && text === ctx.i18n.t(ressourceKey, templateData)
-}
+const { match } = TelegrafI18n
 
 const token = fs.readFileSync(process.env.npm_package_config_tokenpath, 'utf8').trim()
 const bot = new Telegraf(token)
