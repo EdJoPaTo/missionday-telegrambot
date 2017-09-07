@@ -4,6 +4,14 @@
 [![Dependency Status](https://david-dm.org/EdJoPaTo/missionday-telegrambot/status.svg)](https://david-dm.org/EdJoPaTo/missionday-telegrambot)
 [![Dependency Status](https://david-dm.org/EdJoPaTo/missionday-telegrambot/dev-status.svg)](https://david-dm.org/EdJoPaTo/missionday-telegrambot?type=dev)
 
+## Background
+
+This bot was developed for the Missionday Lüneburg on 2. September 2017 but was not used.
+The bot approach lacks the need of physical contact and the orga team wanted to have a great time at the registration location with the agents.
+Also there was free swag for each successful agent that couldn't have been given out with the bot approach to each agent.
+
+Please consider this while planning your own Missionday.
+
 ## How to host your own
 
 ### Requirements
